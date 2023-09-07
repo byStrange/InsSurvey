@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Survey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- Include Google Fonts stylesheet for 'Great Vibes' -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great+Vibes">
+    <style>
+        body {
+            background-color: #ffe0e0; /* Light pink background */
+            font-family: 'Poppins', sans-serif; /* Use the 'Poppins' font */
+            margin: 0;
+            padding: 0;
+        }
+
+  /* Style for the Instagram icon and header */
+        .header-content {
+            display: flex;
+            align-items: center; /* Align items vertically */
+            justify-content: center; /* Center horizontally */
+            margin-bottom: 20px; /* Add space below the icon and header */
+        }
+
+        .header-content i {
+            font-size: 64px; /* Larger Instagram icon size */
+            color: #FF0020; /* Pink color for the icon */
+        }
+
+        header {
+            background-color: #f02e6a; /* Dark pink header background */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 32px; /* Larger font size for the header */
+            font-family: 'Great Vibes', cursive; /* Apply 'Great Vibes' font to the header */
+        }
+
+        main {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #f02e6a; /* Pink color for the question titles */
+            font-size: 20px; /* Larger font size for the question titles */
+            font-family: 'Great Vibes', cursive; /* Apply 'Great Vibes' font to questions */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333; /* Dark text color for labels */
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px; /* Larger font size for input fields */
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #f02e6a; /* Pink submit button */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Larger font size for the submit button */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff1f4a; /* Darker pink on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f02e6a; /* Dark pink footer background */
+            color: #fff;
+        }
+
+        /* Hide the thanks message by default */
+        #thanks-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: #f02e6a; /* Pink color for the message */
+            font-size: 24px; /* Larger font size for the message */
+            font-family: 'Great Vibes', cursive; /* Apply 'Great Vibes' font to the message */
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+        <i class="fab fa-instagram"></i> <!-- Instagram icon -->
+        <h1>Instagram Survey</h1>
+    </div>
+</header>
+
+
+    <main>
+        <form id="survey-form">
+            <h2>Question 1:</h2>
+            <label for="q1">Type a user that you loved most</label>
+            <input type="text" id="q1" name="q1" required>
+
+            <h2>Question 2:</h2>
+            <label for="q2">How often do you use Instagram</label>
+            <select id="q2" name="q2" required>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="rarely">Rarely</option>
+            </select>
+
+            <h2>Question 3:</h2>
+            <label>Do you enjoy from Instagram services</label>
+            <input type="radio" id="q3-yes" name="q3" value="yes" required>
+            <label for="q3-yes">Yes</label>
+            <input type="radio" id="q3-no" name="q3" value="no" required>
+            <label for="q3-no">No</label>
+            <input type="radio" id="q3-no" name="q3" value="notmuch" required>
+            <label for="q3-no">Not much</label>
+
+            <input type="submit" value="Submit">
+        </form>
+        <div id="thanks-message">
+            <p>Thanks for your survey!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 GenInsSurvey</p>
+    </footer>
+
+    <script>
+        // JavaScript to display the thanks message and redirect upon form submission
+        const form = document.getElementById('survey-form');
+        const thanksMessage = document.getElementById('thanks-message');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            form.style.display = 'none';
+            thanksMessage.style.display = 'block';
+
+            // Redirect to thank-you.html after a brief delay (you can adjust the delay time)
+            setTimeout(function () {
+                window.location.href = 'thank-you.html';
+            }, 2000); // 2000 milliseconds (2 seconds) delay
+        });
+    </script>
+</body>
+</html>
